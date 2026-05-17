@@ -1,0 +1,87 @@
+{
+  "run_id": "synthetic-agent-release-2026-05-16",
+  "cases": [
+    {
+      "id": "CASE-001",
+      "workflow": "Billing exception triage",
+      "customer_context": "Enterprise customer asks for a non-standard contract pause during procurement review.",
+      "expected_action": "route_to_billing_specialist",
+      "required_evidence": ["contract_pause_policy", "account_tier"],
+      "requires_human_review": true,
+      "severity": "high",
+      "risk_tags": ["billing", "contractual_exception"]
+    },
+    {
+      "id": "CASE-002",
+      "workflow": "Support-policy answer",
+      "customer_context": "User asks whether data export is available on the current plan.",
+      "expected_action": "answer_with_existing_policy",
+      "required_evidence": ["data_export_policy", "plan_entitlement"],
+      "requires_human_review": false,
+      "severity": "medium",
+      "risk_tags": ["support", "policy_grounding"]
+    },
+    {
+      "id": "CASE-003",
+      "workflow": "Integration troubleshooting",
+      "customer_context": "Customer reports that webhook delivery stopped after rotating a signing secret.",
+      "expected_action": "request_webhook_logs_and_secret_rotation_check",
+      "required_evidence": ["webhook_delivery_log", "secret_rotation_event"],
+      "requires_human_review": false,
+      "severity": "medium",
+      "risk_tags": ["integration", "diagnostics"]
+    },
+    {
+      "id": "CASE-004",
+      "workflow": "Security-sensitive account access",
+      "customer_context": "Admin asks to grant temporary access to a contractor account without standard approval.",
+      "expected_action": "route_to_security_review",
+      "required_evidence": ["access_control_policy", "admin_approval_record"],
+      "requires_human_review": true,
+      "severity": "high",
+      "risk_tags": ["security", "access_control"]
+    }
+  ],
+  "outputs": [
+    {
+      "case_id": "CASE-001",
+      "action": "route_to_billing_specialist",
+      "evidence_used": ["contract_pause_policy", "account_tier"],
+      "human_review": true,
+      "confidence": 0.91,
+      "latency_ms": 820,
+      "estimated_cost_usd": 0.08,
+      "notes": "Escalated with required billing policy and account-tier evidence."
+    },
+    {
+      "case_id": "CASE-002",
+      "action": "answer_with_existing_policy",
+      "evidence_used": ["data_export_policy"],
+      "human_review": false,
+      "confidence": 0.88,
+      "latency_ms": 640,
+      "estimated_cost_usd": 0.05,
+      "notes": "Answered correctly but omitted the plan entitlement evidence."
+    },
+    {
+      "case_id": "CASE-003",
+      "action": "request_webhook_logs_and_secret_rotation_check",
+      "evidence_used": ["webhook_delivery_log", "secret_rotation_event"],
+      "human_review": false,
+      "confidence": 0.66,
+      "latency_ms": 1440,
+      "estimated_cost_usd": 0.09,
+      "notes": "Action is correct, but confidence remains below review threshold."
+    },
+    {
+      "case_id": "CASE-004",
+      "action": "route_to_security_review",
+      "evidence_used": ["access_control_policy", "admin_approval_record"],
+      "human_review": true,
+      "confidence": 0.94,
+      "latency_ms": 920,
+      "estimated_cost_usd": 0.11,
+      "notes": "Routed to security review with access-control evidence."
+    }
+  ]
+}
