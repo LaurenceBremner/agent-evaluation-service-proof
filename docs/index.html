@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Agent Evaluation Service</title>
+  <style>
+    body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; margin: 0; color: #111827; background: #f8fafc; }
+    main { max-width: 760px; margin: 0 auto; padding: 56px 24px; }
+    h1 { font-size: 40px; line-height: 1.05; margin: 0 0 12px; }
+    p, li { font-size: 18px; line-height: 1.55; }
+    code { background: #e5e7eb; padding: 2px 6px; border-radius: 4px; }
+    .badge { color: #075985; font-weight: 700; text-transform: uppercase; letter-spacing: .08em; font-size: 13px; }
+    .card { background: white; border: 1px solid #dbe3ef; border-radius: 8px; padding: 24px; box-shadow: 0 12px 30px rgba(15, 23, 42, .08); }
+  </style>
+</head>
+<body>
+  <main>
+    <div class="badge">Synthetic eval service</div>
+    <h1>Agent Evaluation Service</h1>
+    <div class="card">
+      <p>A small FastAPI/Pydantic service for turning synthetic AI workflow cases into scored rollout decisions.</p>
+<ul>
+  <li>Deterministic failure-mode scoring</li>
+  <li>Human-review thresholds and rollout gates</li>
+  <li>Sample eval dataset and pytest coverage</li>
+  <li>Explicit production caveats and enterprise hardening notes</li>
+</ul>
+<p>See the repository README, runbook, tests, and <code>agent_eval_service/</code> implementation.</p>
+      <p><strong>Boundary:</strong> synthetic data only; no confidential or production customer deployment is represented.</p>
+    </div>
+  </main>
+</body>
+</html>
